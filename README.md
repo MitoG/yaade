@@ -34,12 +34,23 @@ To have the best experience with Yaade run the docker container on your server a
 
 ### 1. 🐋 Docker
 
+To start Yaade in a docker container either use the `docker run` command
+
 ```bash
 docker volume create yaade
 docker run -d --restart=always -p 9339:9339 -e YAADE_ADMIN_USERNAME=admin -v yaade:/app/data --name yaade esperotech/yaade:latest
 ```
 
+or `docker compose`. An example of the usage of this docker file is in `docker-compose.example.yaml`
+
+```bash
+docker compose up -d
+```
+
+
 The default password is `password`. After login go to ⚙️ > Account and change the password.
+
+
 
 ### 2. 🔧 Extension
 

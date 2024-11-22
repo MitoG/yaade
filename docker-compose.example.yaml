@@ -1,0 +1,30 @@
+services:
+  yaade:
+    image: esperotech/yaade:latest
+    container_name: yaade
+
+    ports:
+      - "9339:9339"
+
+    volumes:
+      - yaade:/app/data
+
+    environment:
+      - YAADE_ADMIN_USERNAME=admin # needs to be set
+      
+      # The options below are set by default
+      # - YAADE_PORT=9339
+      # - YAADE_JDBC_URL="jdbc:h2:file:./app/data/yaade-db"
+      # - YAADE_JDBC_USERNAME="sa"
+      # - YAADE_JDBC_PASSWORD=""
+      # - YAADE_BASE_PATH=""
+      # - YAADE_FILE_STORAGE_PATH="./app/data/files"
+      # - YAADE_SCRIPT_RUNNER_TIMEOUT=30_000
+      # - YAADE_SERVER_BODY_LIMIT=10485760
+      # - YAADE_SERVER_MAX_HEADER_SIZE=8192
+
+    restart: always
+
+
+volumes:
+  yaade:
